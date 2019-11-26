@@ -28,12 +28,13 @@ https://github.com/lchdl/voxr.git
 
 ## voxr file format
 Each voxel is represented by 4 bytes. The format of each voxel is : A | R | G | B
+
 "A" is a value used for represent the transparency of the voxel. 0 means the voxel is invisible, 255 means the corresponding voxel is solid, while a value between 0~255 means the translucent voxel. Rendering a translucent voxel will have a "fog" effect.
-"R,G,B" is RGB color component of the voxel.
-voxel data is stored in an array structure. If you want to render a volume with 100*100*100 voxels, you should provide a binary file with size of (100*100*100)*4 bytes. The storage order of each voxel is from low dimension to high dimension. 
+"R,G,B" is RGB color component of the voxel. Voxel data is stored in an array structure. If you want to render a volume with 100x100x100 voxels, you should provide a binary file with size of (100x100x100)x4 bytes. The storage order of each voxel is from low dimension to high dimension. 
+
 For example, if position (0,0,0) has a voxel with color (100,100,100) and transparency value 255, if position (0,0,1) has a voxel with color (128,255,255) and transparency value 200,... then you should write 255,100,100,100,200,128,255,255,... into your disk.
 
 ## How do these examples work?
-In these examples I uploaded a full brain parcellation result, the data shape is 156*220*172 with 156 slices, 220 rows, 172 columns. Each voxel is stored from low dimension to high dimension, so voxel at position (0,0,0) is stored into disk first, then (0,0,1),(0,0,2),...,(0,0,171),(0,1,0),(0,1,1),(0,1,2),...,(0,1,171),..., until (155,219,171).
+In these examples I uploaded a full brain parcellation result, the data shape is 156x220x172 with 156 slices, 220 rows, 172 columns. Each voxel is stored from low dimension to high dimension, so voxel at position (0,0,0) is stored into disk first, then (0,0,1),(0,0,2),...,(0,0,171),(0,1,0),(0,1,1),(0,1,2),...,(0,1,171),..., until (155,219,171).
 The renderer is implemented with CUDA C++ and NVRTC, using a 3D-DDA ray traversal algorithm, the rendering method is brute force path tracing, so you can still see some noises in the final rendered image even after 1000 iterations...
 
