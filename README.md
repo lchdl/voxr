@@ -16,9 +16,13 @@ https://github.com/lchdl/voxr.git
 3. If CUDA_PATH is correctly set, then you can compile voxr by typing:
    ./install.sh
 4. If no error occured during compilation, you can see a new directory has been created (./bin). It contains 4 files:
+   
    ptxc : a binary executable, used for compiling CUDA source file (*.cu) into PTX codes (*.ptx).
+   
    voxr : a binary executable, used for rendering 3D voxel data.
+   
    render.ptx : a compiled PTX code, used for rendering.
+   
    save_png.py : a Python script used for converting raw framebuffer data into a PNG file, this is the final render result.
 
 ## How to run example
