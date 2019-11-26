@@ -3,8 +3,7 @@ voxr: a very light-weight, simple but effective NVIDIA GPU voxel renderer used f
 
 https://github.com/lchdl/voxr.git
 
-<img src="https://github.com/lchdl/voxr/blob/master/render_output_solid.png" width="300">
-<img src="https://github.com/lchdl/voxr/blob/master/render_output_volumetric.png" width="300">
+<img src="https://github.com/lchdl/voxr/blob/master/render_output_solid.png" width="300"> <img src="https://github.com/lchdl/voxr/blob/master/render_output_volumetric.png" width="300">
 
 ## The aim of voxr
 1. 3D voxel data visualization;
